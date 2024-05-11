@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "../Themes";
 
 const transition = {
   type: "spring",
@@ -70,7 +72,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] shadow-input flex justify-center space-x-40 px-4 py-6 md: space-x-20"
     >
       {children}
     </nav>
