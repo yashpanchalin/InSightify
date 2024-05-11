@@ -2,8 +2,13 @@
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import Button from "@/components/Button";
+import Link from "next/link";
+import React, { useState } from "react";
+import InputFieldPage from "./generate-text/page";
+import URLInputForm from "@/components/URLInputForm";
 
 function Home() {
+  const [showInput, setShowInput] = useState(false);
   return (
     <HeroHighlight>
       <motion.h1
@@ -44,7 +49,11 @@ function Home() {
           From URL To Summary in Seconds!
         </Highlight>
       </motion.h4>
-      <Button />
+      {showInput ? (
+        <URLInputForm />
+      ) : (
+        <Button onClick={() => setShowInput(true)}></Button>
+      )}
     </HeroHighlight>
   );
 }
